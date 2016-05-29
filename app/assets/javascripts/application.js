@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//=require_tree
+//= require_tree
 
 function setClass(element, className, add){
 	if (element.attr("class") == null){

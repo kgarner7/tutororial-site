@@ -41,12 +41,12 @@
 
 <script>
 	console.log("<%= @method %>")
-</script>>
+</script>
 <% if @method == "reload"%>
 	<% if @test == "1"%>
 	  	<script>
 		  	document.addEventListener("DOMContentLoaded", function(event){
-				if(document.passed == "OK"){
+				if(document.passed == null || document.passed == "OK"){
 					window.location.href = "/lessons/<%=@lesson.id%>?target=<%=@target%>&test=2&method=reload"
 				}
 			});

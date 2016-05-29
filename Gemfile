@@ -31,6 +31,7 @@ gem 'crypt'
 gem 'carrierwave'
 gem 'symmetric-encryption'
 gem 'puma'
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

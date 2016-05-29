@@ -26,7 +26,7 @@
   
 
 $ ->
-  resizeWrapper()
+  setTimeout(resizeWrapper(), 50)
   $(".step-action-form").on "submit", (event) ->
     count = 0
     $("[type=checkbox]").each () ->

@@ -13,3 +13,4 @@
 /tmp
 
 local_pg.dump
+.env

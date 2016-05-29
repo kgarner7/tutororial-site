@@ -1,0 +1,37 @@
+<div id='step-197'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="header text-center">Like any object in mathematics, graphs have certain special properties.</div>
+    <div class="row empty"></div>
+    <div id='answer-1'>
+        <p class="content text-left" id="adjacency-content">
+    One major property of graphs is <em>adjacency</em>. 
+    <em>Adjacency</em> occurs when two arbitrary vertices <var>U</var> and <var>V</var> are on the same edge {<var>U</var>, <var>V</var>}. 
+    In the graph on the right, vertices <var>A</var> and <var>B</var> are adjacent because they both belong on the edge {<var>A</var>, <var>B</var>}. 
+    Likewise, vertices <var>B</var> and <var>C</var> are adjacent.
+    However, vertices <var>A</var> and <var>C</var> are not adjacent because they do not share an edge. Also, vertex <var>D</var> is not adjacent to any other vertex.</p>
+        <%= hidden_field_tag 'T/E2LSaj5VOsw+WHM/HdHg==', '4hWpuT66M4ZNXht4Mwkqjw==', id: 'answer-field-1'%>
+        <%= image_tag Image.find(32).image.url, id: "graph", class: "image" %>
+    </div>
+    <div id='answer-2'>
+        <p class="content text-right" id="degree-content">
+    Aside from adjacency, each vertex in a graph has a <em>degree</em>.
+    For any vertex <var>U</var>, the <em>degree</em> is equal to the number of vertices adjacent to <var>U</var>.
+    In the graph on the left, the degree of vertex <var>A</var> is one because vertex <var>A</var> is adjacent to vertex <var>B</var>.
+    The degree of vertex <var>B</var> is two because vertex <var>B</var> is adjacent to both vertices <var>A</var> and <var>C</var>.
+    Vertex <var>D</var>, on the other hand, has a degree of zero because <var>D</var> is adjacent to no vertex.
+        </p>
+        <%= hidden_field_tag 'csxBy8HsHCb6IpsQqtPYrw==', 'zlTkGHLkGoyNfnN9AYlQvQ==', id: 'answer-field-1'%>
+    </div>
+    <div class="row empty" style="clear: both"></div>
+    <div id='answer-3'>
+        <%= image_tag Image.find(35).image.url, class: "image", id: "incomplete-graph" %>
+        <p class="content text-center" id="complete-content">
+    One special and common graph is the <em>complete graph</em>. 
+    In a complete graph, every vertex is adjacent to every other vertex.
+    The graph on the left is a complete graph because every vertex is connected to every other vertex, however, the graph on the right is not complete, because vertices <var>A</var> and <var>D</var> are not adjacent.
+        </p>
+        <%= image_tag Image.find(36).image.url, class: "image", id: "complete-graph" %>
+        <%= hidden_field_tag 'b3CA12DLJ2itdTAhZP7Nmw==', 'tn3PsTa9w3s4sYCzv+LQpw==', id: 'answer-field-1'%>
+    </div>
+

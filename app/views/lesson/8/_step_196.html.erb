@@ -1,0 +1,45 @@
+<div id='step-196'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="col-xs-12 empty"></div>
+    <div class="col-xs-12 text-center header">Instead of images, let's represent Bob's routine with a graph. But wait! What is a graph?</div>
+    <div class="col-xs-12 empty"></div>
+    <div class="col-xs-3"></div>
+    <div class="col-xs-1"></div>
+    <div class="col-xs-4">
+        <h3 class="text-center">A graph of Bob's routine</h3>
+        <%= image_tag Image.find(31).image.url, id: "graph", width: "100%", height: "100%" %>
+        <div id='answer-1'>
+            <p id="vertex-field" class="text-center">A graph consists of a set <var>V</var>. Each element of this set <var>V</var> is called a <em>vertex</em>. In a graph, vertices are denoted by a circle with a label. For Bob's routine, each vertex represents a location on Bob's routine.</p>
+            <%= hidden_field_tag 'b/Xe9BEzST73vFW32mkzPg==', '9ycY8u1TJJn9ZLlFiKYZdQ==', id: 'answer-field-1'%>
+            <div class="row emtpy"></div>
+            <p id="house-label" class="vertex-label">House</p>
+            <p id="school-label" class="vertex-label">School</p>
+            <p id="park-label" class="vertex-label">Park</p>
+            <p id="store-label" class="vertex-label">Store</p>
+        </div>
+        <div id='answer-2'>
+            <p id="edge-field" class="text-center">A graph also consists of a set <var>E</var>. Each element of this set is called an <em>edge</em> a pair of connecting vertices. In a graph, an edge is denoted by a line connected by two vertices. For Bob's routine, each edge represents where Bob walks.</p>
+            <p id="edge-label">This is an edge</p>
+            <%= hidden_field_tag 'DkSv1Un2xSV3HOnLjd3wdQ==', 'hiAkGJiCFb5vH7PO+AD9cA==', id: 'answer-field-1'%>
+        </div>
+        <div id='answer-3'>
+            <p id="summary-field" class="text-center">The graph of Bob's path contains vertices <var>A</var>, <var>B</var>, <var>C<var>, and <var>D</var>, and edges {<var>A</var>, <var>B</var>}, {<var>B</var>, <var>C</var>}, {<var>C</var>, <var>D</var>}, and {<var>D</var>, <var>A</var>}</p>
+            <%= hidden_field_tag 'MXmjkpiNjmoKkas9KWUMqw==', 'UVy4EvX1ZnZIHgmEtRp34w==', id: 'answer-field-1'%>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div id='answer-4'>
+            <p id="different-field" class="text-left col-xs-4">
+    <br>
+    When creating a graph, it does not matter how the graph looks, as long as the graph contains the same edges and vertices. 
+    Instead of the first graph, we can represent Bob's routine with the alternate graph on the right. 
+            </p>
+            <div class="col-xs-8">
+                <h3 class="text-center">Alternate graph</h3>
+                <%= image_tag Image.find(47).image.url, style: "width: 100%" %>
+            </div>
+            <%= hidden_field_tag 'N8ZbmSMw7zW4UDbyVIagpQ==', 'aAESOV3D28LX/4SyfKd7sg==', id: 'answer-field-1'%>
+        </div>
+    </div>
+

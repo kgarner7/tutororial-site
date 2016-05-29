@@ -1,0 +1,40 @@
+#step-199 {
+  .answer {
+    position: absolute;
+    font-size: 1.2em;
+  }
+  
+  .header {
+    font-size: 1.25em;
+    text-align: center;
+  }
+  
+  .answer-2, .answer-3 {
+    left: 5%;
+  }
+  
+  .answer-3, .answer-4 {
+    bottom: 5%;
+  }
+  
+  .answer-2 { 
+    top: 8%;
+  }
+  
+  .answer-4 {
+    right: 5%
+  }
+  
+  .image {
+    width: 100%;
+  }
+  
+  .content {
+    font-size: 1.125em;
+  }
+  
+  #iso-correct {
+    font-size: 1.125em;
+    margin-top: 7.5%;
+  }
+}

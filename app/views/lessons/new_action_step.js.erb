@@ -1,0 +1,15 @@
+$("#step-action-modal").modal('show')
+$("#step_action_index").val("<%=@index%>")
+$("#step_action_score").val(1)
+document.index = 1
+$(".answer-fields").append("<%= escape_javascript render "answers/new_answer_form", answer_index: 1, first: true %>")
+$("#add-answer-button").on("click", function(event) {
+	$(".answer-fields").append("<%= escape_javascript render "answers/new_answer_form", answer_index: 0, first: false %>")
+	doStuff()
+})
+$("#step-action-modal").on("hide.bs.modal", function(event){
+	$(".answer-fields").empty()
+	$(".errors-content").html("")
+	$("#step-action-modal").off("hide.bs.modal")
+})
+$(".step-action-form").attr("action", "<%= create_action_path(id: @step.id)%>")

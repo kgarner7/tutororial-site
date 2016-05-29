@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.errors {
+  border: 1px solid #f2dede;
+}
+
+.column4 {
+  width: 50%;
+}
+
+.progress {
+  height: 30px;
+}
+
+#header-wrapper {
+  height: 100px;
+  width: 100%;
+}
+
+#copyright {
+  height: 50px;
+  width: 100%;
+}
+
+
+.badge {
+  font-size: 20px;
+}
+
+.step {
+  margin: 15px;
+}
+
+.bottom, .bottom-back, .bottom-forward, .bottom-middle, .bottom-previous, .bottom-next {
+  position: absolute;
+}
+
+.bottom {
+  left: 5%;
+  width: 90%;
+  bottom: 50px
+}
+
+.bottom-back, .bottom-forward, .bottom-previous, .bottom-next, .bottom-middle {
+  bottom: 90px;
+  width: 15%;
+}
+
+.bottom-previous, .bottom-next {
+   width: 10%;
+}
+
+.bottom-next{
+  right: 5%;
+}
+
+.bottom-previous {
+  left: 5%;
+}
+
+.bottom-middle {
+  width: 30%;
+}
+
+.bottom-back {
+  left: 20%;
+}
+
+.bottom-middle {
+  left: 35%;
+}
+
+#wrapper2{
+  overflow: scroll;
+}
+
+.bottom-forward {
+  right: 20%;
+}
+
+.step-field {
+  overflow: scroll;
+}

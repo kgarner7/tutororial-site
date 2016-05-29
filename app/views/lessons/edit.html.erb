@@ -1,0 +1,115 @@
+<div id="wrapper2">
+	<% unless @target == "main page"%>
+		<%= form_tag edit_step_page_path(step: @user_progress.step), class: "main-form" do %>
+			<div class="edit-box">
+				<div class="text-center"><h3>Coffeescript</h3></div>
+				<% js_string = (@code["coffee"] != "" ? @code["coffee"] : "")%>
+				<% File.read(@user_progress.step.path_to("coffee")).split("#content\n")[1].split("\n").each {|line| js_string += line[6..line.length] + "\n"} if js_string == ""%>
+				<%= text_area_tag :coffee, js_string, class: "file-field" %>
+				<div class="error-box"><%=@errors["coffee"]%></div>
+			</div>
+			<div class="edit-box">
+				<div class="text-center"><h3>AJAX</h3></div>
+				<% ajax_string = @code["ajax"]%>
+				<% ajax_string = File.read("app/views/user_progresses/lesson_#{@user_progress.step.lesson.id}_step_#{@user_progress.step.id}.js.erb") if ajax_string == ""%>
+				<%= text_area_tag :ajax, ajax_string[0..ajax_string.length - 2] , class: "file-field"%>
+				<div class="error-box"><%=@errors["ajax"]%></div>
+			</div>
+			<div class="edit-box">
+				<div class="text-center"><h3>HTML</h3></div>
+				<% html_lines = IO.readlines(@user_progress.step.path_to("html")); html_string = @code["html"]%>
+				<% ((3..html_lines.length - 1).each {|i| html_string += "#{html_lines[i][4..html_lines[i].length]}"}; html_string = html_string[0..html_string.length - 2])if html_string == ""%>
+				<%= text_area_tag :html, html_string, class: "file-field file-field-special"%>
+				<div class="file-field file-field-special">
+					<% Image.all.each do |i| %>
+						<%= render i%>
+					<% end%>
+				</div>
+				<% if @errors["html"] != "" && @code["html"] == ""%>
+					<script>location.reload()</script>
+				<% end%>
+				<div class="error-box"><%=@errors["html"]%></div>
+			</div>
+			<div class="edit-box">
+				<div class="text-center"><h3>Styling</h3></div>
+				<% scss_lines = IO.readlines(@user_progress.step.path_to("scss")); scss_string = @code["scss"]%>
+				<% (scss_lines.index("#step-#{@user_progress.step.id} {\n") + 1..scss_lines.length - 2).each {|i| scss_string += "#{scss_lines[i][2..scss_lines[i].length]}"} if scss_string == ""%>
+				<%= text_area_tag :scss, scss_string[0..scss_string.length - 2], class: "file-field"%>
+				<div class="error-box"><%= @errors["scss"]%></div>
+			</div>
+			<div class="edit-box">
+				<div class="text-center"><h3>Steps</h3></div>
+				<% if @user_progress.step.step_actions.any?%>
+					<ol class="list-unstyled">
+						<% @user_progress.step.step_actions.each do |step_action| %>
+							<%= render step_action %>
+						<% end %>
+					</ol>
+				<% end%>
+				<%= link_to "New Action", new_action_path(id: @user_progress.step.id), class: "btn btn-primary col-xs-12", remote: true, method: "post"%>
+				<%= button_tag "Upload a file", type: "button", class: "btn btn-primary col-xs-12", data: {toggle: "modal", target: "#upload-image-modal"}%>
+			</div>
+			<div class="edit-box">
+				<%= submit_tag "Save changes", class: "btn btn-default"%>
+				<%= link_to "Back", lesson_path(id: @lesson.id, target: @target), class: "btn btn-primary", method: "get"%>
+			</div>
+			
+		<% end%>
+		<div class="modal" id="step-action-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+			        <div class="modal-header">
+			        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        	<h4 class="modal-title" id="myModalLabel">Step Action</h4>
+			        </div>
+			        <div class="modal-body">
+			      		<%= render 'step_actions/step_action_form' %>
+			      	</div>
+		      		<div class="modal-footer" style="clear: both">
+		      	 		<%= button_tag("Close", type: "button", data: {dismiss: "modal"}, class: "btn btn-default") %>
+		        	</div>
+		    	</div>
+		    </div>
+		</div>
+	<% else%>
+		<div class="container">
+			<div class="step-field">
+				<ul class="list-unstyled">
+					<% @lesson.steps.all.each do |step| %>
+						<li>
+							<div class="row empty"></div>
+							<div class="col-xs-4"></div>
+							<h3 class="text-center col-xs-4" data-toggle="modal" data-target="#step-modal" data-name="<%=step.name%>" data-index="<%=step.index%>" data-path="<%=update_step_path(id: step.id)%>"><%= step.name %></h3>
+							<div class="col-xs-2"><%= link_to "Remove", remove_step_path(id: step.id), method: "post", data: {confirm: "Are you sure you want to remove that step?"}%></div>
+							<div class="col-xs-2"></div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+			<div class="row empty"></div>
+			<div class="col-xs-3"></div>
+			<%= link_to "Back", lesson_path(id: @lesson.id, target: "main page"),type: "button", class: "btn btn-primary bottom-back", method: "get"%>
+			<%= button_tag "Upload a file", type: "button", class: "btn btn-primary bottom-middle", data: {toggle: "modal", target: "#upload-image-modal"}%>
+			<%= button_tag "Add a Step", type: "button", class: "btn btn-primary bottom-forward", data: {toggle: "modal", target: "#step-modal", path: create_step_path(id: @lesson.id), index: @lesson.steps.count + 1}%>
+			
+			<div class="col-xs-3"></div>
+			<div class="modal" id="step-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+			    <div class="modal-dialog" role="document">
+			        <div class="modal-content">
+				        <div class="modal-header">
+				        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        	<h4 class="modal-title" id="myModalLabel">New Step</h4>
+				        </div>
+				        <div class="modal-body">
+				      		<%= render 'steps/step_form' %>
+				      	</div>
+			      		<div class="modal-footer" style="clear: both">
+			      	 		<%= button_tag("Close", type: "button", data: {dismiss: "modal"}, class: "btn btn-default") %>
+			        	</div>
+			    	</div>
+			    </div>
+			</div>
+		</div>
+	<% end%>
+	<%= render "image/upload_image"%>
+</div>

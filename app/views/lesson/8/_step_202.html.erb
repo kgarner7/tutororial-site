@@ -1,0 +1,153 @@
+<div id='step-202'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="header col-xs-12 text-center">
+        Although adjacency matrices work well to represent graphs, when there are many entries of zero, these matrices become clunky.
+        Furthermore, sometimes we just want to know which vertices are adjacent, instead of which vertices are not.
+        In either of those cases, we can represent the graph through an <em>adjacency list</em>.
+    </div>
+    <div id='answer-1'>
+        <%= hidden_field_tag '+ONeAVW5F3eCeZnk2RN8lA==', 'Kl31mFjA7vG3aAs/RoVQsA==', id: 'answer-field-1'%>
+    <div class="col-xs-6">
+        <p class="content">
+    An adjacency list is simply a list of each vertex in a graph, followed by their adjacent vertices.
+        <ol>
+            <div id='answer-2'>
+                <li>To create an adjacency list, we first label the graph (if it is not already labeled)</li>
+                <%= hidden_field_tag 'Je07wyyIXy810JZoiJbwsg==', 'wlfAJh8SCKlkvDf/GcmpMA==', id: 'answer-field-1'%>
+            </div>
+            <div id='answer-3'>
+                    <li>Then, we list each vertex in a vertical column.</li>
+                <%= hidden_field_tag 'jTp3FkudsGPf/W8CVooBIg==', '9mXqFg2XBAZyCuKVrNxk0Q==', id: 'answer-field-1'%>
+            </div>
+            <div id='answer-4'>
+                <li>Afterwards, we go through each row and list all the vertices adjacent to the entry of that row</li>
+                <%= hidden_field_tag 'khAeRjU6gVMG7aub2OIcVg==', '2TKZd1H4YMelkpJOQgXOuQ==', id: 'answer-field-1'%>
+            </div>    
+        </ol>
+        </p>
+    </div>
+        <div class="matrix col-xs-3">
+                <h4 class="row text-center">Adjacency List of <var>Graph 1</var></h4>
+                <div class="header-vertical" id="content-3">
+                    <div class="matrix-vertical"><var>A</var>:</div>
+                    <div class="matrix-vertical"><var>B</var>:</div>
+                    <div class="matrix-vertical"><var>C</var>:</div>
+                    <div class="matrix-vertical"><var>D</var>:</div>
+                    <div class="matrix-vertical"><var>E</var>:</div>
+                </div>
+                <div class="matrix-content" id="content-4">
+                    <div class="content-row">
+                        <div class="matrix-object"><var>B</var></div>
+                        <div class="matrix-object"><var>E</var></div>
+                        <div class="matrix-object"><var>C</var></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>A</var></div>
+                        <div class="matrix-object"><var>D</var></div>
+                        <div class="matrix-object"></div>
+                   </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>A</var></div>
+                        <div class="matrix-object"><var>D</var></div>
+                        <div class="matrix-object"></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>B</var></div>
+                        <div class="matrix-object"><var>C</var></div>
+                        <div class="matrix-object"></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>E</var></div>
+                        <div class="matrix-object"></div>
+                        <div class="matrix-object"></div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-xs-3">
+            <h4>Graph 1</h4>
+            <%=image_tag Image.find(64).image.url, class: "image"%>
+        </div>
+    </div>
+    <div id='answer-5'>
+        <div class="col-xs-3">
+            <h4 class="text-center">Graph 2</h4>
+            <%= image_tag Image.find(65).image.url, class: "image", id: "stuff"%>
+        </div>
+        <div class="matrix col-xs-3">
+                    <h4 class="row text-center">Adjacency List of <var>Graph 1</var></h4>
+                    <div class="header-vertical" id="content-6">
+                        <div class="matrix-vertical"><var>A</var>:</div>
+                        <div class="matrix-vertical"><var>B</var>:</div>
+                        <div class="matrix-vertical"><var>C</var>:</div>
+                        <div class="matrix-vertical"><var>D</var>:</div>
+                        <div class="matrix-vertical"><var>E</var>:</div>
+                        <div class="matrix-vertical"><var>F</var>:</div>
+                    </div>
+                    <div class="matrix-content">
+                        <div class="content-row" id="content-7">
+                            <div class="matrix-object"><var>B</var></div>
+                            <div class="matrix-object"><var>C</var></div>
+                            <div class="matrix-object"></div>
+                        </div>
+                        <div id="content-8">
+                        <div class="content-row">
+                            <div class="matrix-object"><var>A</var></div>
+                            <div class="matrix-object"><var>E</var></div>
+                            <div class="matrix-object"><var>F</var></div>
+                        </div>
+                        <div class="content-row" >
+                            <div class="matrix-object"><var>A</var></div>
+                            <div class="matrix-object"></div>
+                            <div class="matrix-object"></div>
+                        </div>
+                        </div>
+                        <div class="content-row" id="content-9">
+                            <div class="matrix-object">nothing</div>
+                            <div class="matrix-object"></div>
+                            <div class="matrix-object"></div>
+                        </div>
+                        <div id="content-10">
+                        <div class="content-row">
+                            <div class="matrix-object"><var>B</var></div>
+                            <div class="matrix-object"></div>
+                            <div class="matrix-object"></div>
+                        </div>
+                        <div class="content-row">
+                            <div class="matrix-object"><var>B</var></div>
+                            <div class="matrix-object"></div>
+                            <div class="matrix-object"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="col-xs-6">
+    <h4></h4>
+            <span class="content">Let's construct an adjacency list for <em>Graph 2</em></span>
+            <ol>
+    <div id='answer-6'>
+        <li>First, we put all the vertices in a vertical list, then we consider each of the vertices.</li>
+        <%= hidden_field_tag 'wAMlUGhEbMiwPwsaY8PzHw==', 'w+EDgtnga6+zO8O24lgNLA==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-7'>
+        <li>Since vertex <var>A</var> is adjacent to <var>B</var> and <var>C</var>, we label that row with <var>B</var> and <var>C</var></li>
+        <%= hidden_field_tag '0BFKvEe0dRMGKV+kA/uPlA==', 'CuT1uTei2WSu1bsNPzf+vw==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-8'>
+        <li>Vertex <var>B</var> is adjacent to vertices <var>A</var>, <var>F</var>, and <var>E</var>, so we label that row with <var>A</var>, <var>E</var>, <var>F</var>. Vertex <var>C</var> is only adjacent to <var>A</var> so we label row <var>C</var> with <var>A</var></li>
+        <%= hidden_field_tag '6Fs1C27N6gInSaeSEpC33A==', '+69dVQmS0PJNDt6iO2wdiQ==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-9'>
+        <li>Vertex <var>D</var> has no adjacent vertices, so we leave it blank (or you can 
+        <%= hidden_field_tag '1WkV0h0dNQrj6+ywcWZ2+A==', '+bmTPGCj89qVRn7kHkUg0g==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-10'>
+        <li>We continue this pattern for vertices <var>E</var> and <var>F</var> to create the adjacency list.
+        <%= hidden_field_tag 'TD92FGsMSm0XlY4PPY8zgg==', 'mi+lUW8L+yGHuM/F1aY9+Q==', id: 'answer-field-1'%>
+    </div>
+            </ol>
+        </div>
+        <%= hidden_field_tag '/U3BZeKV/ao1mOk4CyBXxQ==', 'KerUS1IfpD6GVdISE+FC7Q==', id: 'answer-field-1'%>
+    </div>
+
+        <%= hidden_field_tag 'fJ6z6E775q6tD9dtfhWqTQ==', 'PdrZqH8IAZrmd3d4Zi9oSg==', id: 'answer-field-2'%>

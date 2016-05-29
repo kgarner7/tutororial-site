@@ -1,0 +1,16 @@
+<div class="container-box">
+  <div id="login">
+  	<% target = params.require(:target) rescue "signup"%>
+  	<% if target == "signup"%>
+    	<%= render "students/student_form"%>
+    <% else %>
+    	<%= render "students/login_form"%>
+    <% end %>
+	<p><%= button_to "Home", root_url, method: "get", type: "button"%></p>
+	<% if target == "login"%>
+		<p>Not a member? <%=link_to "Sign up now", login_path(target: "signup"), method: "get"%><span class="fontawesome-arrow-right"></span></p>
+	<% else %>
+		<p>Already have an account? <%= link_to "Log in", login_path(target: "login"), method: "get"%></p>
+	<% end %>
+  </div>
+</div>

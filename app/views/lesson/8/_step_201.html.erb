@@ -1,0 +1,224 @@
+<div id='step-201'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="col-xs-12 header text-center">
+    Although vertices and edges are a common visualizations of graphs, sometimes we to represent graphs in other ways.
+    </div>
+    <div id='answer-1'>
+        <p class="col-xs-12 content">
+    Despite the graphic vertex-edge representation of a graph being nice visually, but are not as easy to represent for algorithms and computers.
+    One option we have to make the graph more meaningful is to convert the graph into a <em>adjacency matrix</em>.
+    To convert a graph with <var>n</var> vertices, we first create an <var>n</var> by <var>n</var> matrix.
+    Then, we assign each vertex to a row and column in the matrix.
+    Afterwards, we go through each entry, and assign that entry a one if there exists an edge between vertex of that row and the vertex of that column, or otherwise zero. 
+        </p>
+        <%= hidden_field_tag '0g4KUaiLx6DDoIRFRuERrQ==', 'TkBPv5YKaAmBtVZLOXonYQ==', id: 'answer-field-1'%>
+    </div>
+    <div class="row empty"></div>
+    <div id='answer-2'>
+        <p class="col-xs-6 content">
+    		<span id='text-2'>For <var>Graph 1</var>, we first create a 4 by 4 matrix.</span>
+    		<span id="text-3">Then we label the rows and columns from <var>A</var> to <var>D</var>.</span>
+    		<span id="text-4">The only edge from vertex <var>A</var> is to vertex <var>B</var> therefore the only 1 in row A is on column B.</span>
+    		<span id="text-5">Since there is an edge between vertex <var>B</var> and both vertex <var>A</var> and vertex <var>C</var>, we label those entries with a one.</span>
+    		<span id="text-6">We continue this pattern for vertices <var>C</var> and <var>D</var> to create the matrix on the right.</span>
+        </p>
+        <div class="matrix col-xs-3">
+            <h3>Matrix of <var>Graph 1</var></h3>
+    		<div id='answer-3'>
+             <div class="header-horizontal">
+                 <div class="matrix-horizontal" style="width: 50px"></div>
+                 <div class="matrix-horizontal">A</div>
+                 <div class="matrix-horizontal">B</div>
+                 <div class="matrix-horizontal">C</div>
+                 <div class="matrix-horizontal">D</div>
+             </div>
+             <div class="header-vertical">
+                 <div class="matrix-vertical">A</div>
+                 <div class="matrix-vertical">B</div>
+                 <div class="matrix-vertical">C</div>
+                 <div class="matrix-vertical">D</div>
+             </div>
+        	<%= hidden_field_tag 'pbAJG1HR2YOuf/dZfyafjg==', 'l+7Vyqicg6pnhHPeCPhDdA==', id: 'answer-field-1'%>
+    		</div>
+            <div class="bracket">[</div>
+            <div class="matrix-content" style="width: 112px">
+                <div class="content-row blank" style="margin-top: -20px">
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                </div>
+    		<div id='answer-4'>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                </div>
+          <%= hidden_field_tag 'F5dctBpY/u9JPLbzAVq9+A==', 'D07DAF83g6K/c15xzu43Pg==', id: 'answer-field-1'%>
+      </div>
+    		<div id='answer-5'>
+                <div class="content-row">
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                </div>
+          <%= hidden_field_tag 'ZO70eDfik0J77TptZEvWSA==', '9P4uSh3bDiM61fdvD0MqaA==', id: 'answer-field-1'%>
+      </div>
+    		<div id='answer-6'>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                </div>
+          <%= hidden_field_tag 'oV3s+wbGTJy9b4Vm8N6WjQ==', '70WygCmhCTdtH+q6QZOWFA==', id: 'answer-field-1'%>
+      </div>
+            </div>
+            <div class="bracket">]</div>
+        </div>
+        <div class="col-xs-3">
+            <h3>Graph 1</h3>
+            <%= image_tag Image.find(61).image.url, style: "width: 100%" %>
+        </div>
+        <%= hidden_field_tag 'HpzNwwE3eVlacEEIpOWirQ==', '0/hcd4+LbCoJZOQTfacBLw==', id: 'answer-field-1'%>
+    </div>
+    <div class="row empty"></div>
+    <div id='answer-7'>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-3">
+            <h4 class="text-center">Graph 2</h4>
+            <%=image_tag Image.find(62).image.url, style: "width: 100%"%>
+        </div>
+        <div class="col-xs-3 content text-center">
+       <h3 class="empty"> </h3>
+    For <var>Graph 2</var>, vertex <var>D</var> is adjacent to every other vertex (except itself), therefore every entry in row <var>D</var> and column <var>D</var> is one (except (D, D)).
+        </div>
+        <div class="matrix col-xs-3">
+            <h4 class="text-center">Matrix of <var>Graph 2</var></h4>
+            <div class="header-horizontal">
+                <div class="matrix-horizontal" style="width: 50px"></div>
+                <div class="matrix-horizontal">A</div>
+                <div class="matrix-horizontal">B</div>
+                <div class="matrix-horizontal">C</div>
+                <div class="matrix-horizontal">D</div>
+            </div>
+            <div class="header-vertical">
+                <div class="matrix-vertical">A</div>
+                <div class="matrix-vertical">B</div>
+                <div class="matrix-vertical">C</div>
+                <div class="matrix-vertical">D</div>
+            </div>
+            <div class="bracket">[</div>
+            <div class="matrix-content" style="width: 112px">
+                <div class="content-row blank" style="margin-top: -20px">
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+               </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                </div>
+            </div>
+            <div class="bracket">]</div>
+        </div>
+        <div class="col-xs-2"></div>
+        <%= hidden_field_tag '0Q+RLe148eoFid/Tv8ejOA==', 'AeSp0ZAOupQTjlc5H8SGng==', id: 'answer-field-1'%>
+    </div>
+    <div class="row empty"></div>
+    <div id='answer-8'>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-5 content text-left">
+       <h3 class="empty"> </h3>
+    It is also possible for a vertex to have no adjacent vertices.
+    In this case, both the row and column of that vertex will have only entries of zero.
+    In <var>Graph 3</var>, vertex <var>A</var> has no adjacencies, therefore its corresponding row and column are full of entries of zeroes.
+    Do note, that the labeling of sides is completely arbitrary and can be left out, or can be put in any order. However, for clarity, when you see an adjacency matrix, assume that the sides are labeled alphabetically.
+        </div>
+        <div class="matrix col-xs-3">
+            <h4 class="text-center">Matrix of <var>Graph 3</var></h4>
+            <div class="header-horizontal">
+                <div class="matrix-horizontal" style="width: 50px"></div>
+                <div class="matrix-horizontal">A</div>
+                <div class="matrix-horizontal">B</div>
+                <div class="matrix-horizontal">C</div>
+                <div class="matrix-horizontal">D</div>
+            </div>
+            <div class="header-vertical">
+                <div class="matrix-vertical">A</div>
+                <div class="matrix-vertical">B</div>
+                <div class="matrix-vertical">C</div>
+                <div class="matrix-vertical">D</div>
+            </div>
+            <div class="bracket">[</div>
+            <div class="matrix-content" style="width: 112px">
+                <div class="content-row blank" style="margin-top: -20px">
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                    <div class="matrix-object"></div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+               </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                </div>
+                <div class="content-row">
+                    <div class="matrix-object">0</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">1</div>
+                    <div class="matrix-object">0</div>
+                </div>
+            </div>
+            <div class="bracket">]</div>
+        </div>
+        <div class="col-xs-3">
+            <h4 class="text-center">Graph 3</h4>
+            <%=image_tag Image.find(63).image.url, style: "width: 100%"%>
+        </div>
+        <%= hidden_field_tag '/6vDH5zspyDiWcTumQE5dg==', 'NNPmlMrgTHVl4pnszTux1g==', id: 'answer-field-1'%>
+    </div>
+

@@ -1,0 +1,14 @@
+<%= form_tag(create_step_path(id: @lesson.id), class: "step-form") do%>
+	<div>
+		<div class="col-xs-12">
+			<%= label :step, :name, class: 'col-xs-3'%>
+			<%= text_field :step, :name, class: "col-xs-9", required: true%>
+		</div>
+		<div class="row empty"></div>
+		<div class="col-xs-12">
+			<%= label :step, :index, class: "col-xs-3"%>
+			<%= number_field :step, :index, class: "col-xs-3", value: @lesson.steps.count + 1%>
+		</div>
+		<%= submit_tag "Save changes", class: "btn btn-primary col-xs-12", required: true%>
+	</div>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="answer-field <%= first ? "first": "alternate"%>">
+	<div class="col-xs-12 text-center">
+		<h4>Answer</h4>
+	</div>
+	<div class="answer-value-field">
+		<%= label @index, :answer, class: "col-xs-2"%>
+		<%= text_field "answer[#{answer_index}]", :answer, class: "col-xs-10 answer-value", required: true%>
+	</div>
+	<div class="row empty"></div>
+	<div>
+		<%= label @index, :index, class: "col-xs-2"%>
+		<%= number_field "answer[#{answer_index}]", :index, value: answer_index, class: "col-xs-5", required: true%>
+		<div class="correct-field">
+			<%= check_box "answer[#{answer_index}]", :correct, class: "col-xs-1"%>
+			<%= label "answer[#{answer_index}]", :correct, class: "col-xs-2" %>
+		</div>
+		<% unless first%>
+			<%= button_tag "remove", class: "btn btn-default col-xs-2", id: "remove-answer-button-#{answer_index}", type: "button" %>
+		<% end%>
+	</div>
+	<div class="row empty"></div>
+</div>

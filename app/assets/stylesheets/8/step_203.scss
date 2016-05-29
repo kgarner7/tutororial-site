@@ -1,0 +1,43 @@
+#step-203 {
+  [type='radio'] {
+    display: none;
+  }
+  
+  #error {
+    font-size: 40px;
+  }
+  
+  .matrix {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+  
+  .adjacency {
+    .matrix-object, .matrix-vertical {
+      height: 30px;
+      width: 30px;
+    }
+  
+    .matrix-content {
+      margin-top: -2px;
+    }
+  }
+  
+  .matrix-object {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  
+  .bracket {
+    font-size: 110px;
+    margin-top: -25px;
+  }
+  
+  .button-field {
+    clear: both;
+  }
+  
+  #answer-1, #answer-2, #answer-3 {
+    clear: both;
+  }
+}

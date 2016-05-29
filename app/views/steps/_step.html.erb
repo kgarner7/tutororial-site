@@ -1,0 +1,15 @@
+<div class="text-center step">
+	<%= link_to step.name, lesson_path(step.lesson, target: step.id), method: "get", class: "h1" %>
+	<% student_score = current_student.user_progresses.find_by(step: step).score%>
+	<% class_name = nil%>
+	<% if student_score == step.score%>
+		<% class_name = "alert-success"%>
+	<% elsif student_score >= step.score / 2.0%>
+		<% class_name = "alert-warning"%>
+	<% else%>
+		<% class_name = "alert-danger"%>
+	<% end%>
+	<%= content_tag :span, "#{student_score} / #{step.score}", class: "badge h1 #{class_name}"%>
+
+</div>
+

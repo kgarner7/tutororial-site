@@ -1,0 +1,160 @@
+<div id='step-203'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="header text-center">
+    Welcome to <em>Finding Pairs</em>! 
+    In this game, you will be shown three sets of two graphs with various representations.
+    Your goal is to determine whether the two graphs are exactly the same.
+    You will have ten seconds to view each pair of graphs.
+    If you believe the two representations are of the same graph, press "Same", otherwise press "Different".
+    Once you have done all three sets, your score will be presented. You need to get all three correct to pass.
+    </div>
+    <div class="row empty"></div>
+    <div id="error">
+    </div>
+    <%= button_tag "Begin", type: "button", class: "col-xs-12 btn btn-primary", id: "begin-button"%>
+    <div id="timer">
+        <div class="col-xs-10"></div>
+        <div class="col-xs-2 header" id="timer-field">10</div>
+    </div>
+    <div id='answer-1'>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"><%= image_tag Image.find(66).image.url, style: "width: 100%"%></div>
+        <div class="matrix col-xs-3">
+                <div class="bracket">[</div>
+                <div class="matrix-content" style="width: 112px">
+                    <div class="content-row">
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">0</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                    </div>
+                </div>
+                <div class="bracket">]</div>
+            </div>
+        <div class="col-xs-3"></div>
+        <%= radio_button_tag 'dp3GwHXfJbmQ6pEbENJNVw==', 'Yes', false, id: 'answer-field-1'%>
+        <%= radio_button_tag 'dp3GwHXfJbmQ6pEbENJNVw==', 'No', false, id: 'answer-field-2'%>
+        <%= radio_button_tag 'dp3GwHXfJbmQ6pEbENJNVw==', 'Timeout', false, id: 'answer-field-3'%>
+    </div>
+    <div id='answer-2'>
+        <div class="col-xs-3"></div>
+    <div class="matrix col-xs-3">
+                <div class="bracket">[</div>
+                <div class="matrix-content" style="width: 112px">
+                    <div class="content-row">
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">0</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">0</div>
+                        <div class="matrix-object">1</div>
+                        <div class="matrix-object">0</div>
+                    </div>
+                </div>
+                <div class="bracket">]</div>
+            </div>
+    <div class="matrix col-xs-3 adjacency">
+                <div class="header-vertical">
+                    <div class="matrix-vertical"><var>A</var>:</div>
+                    <div class="matrix-vertical"><var>B</var>:</div>
+                    <div class="matrix-vertical"><var>C</var>:</div>
+                    <div class="matrix-vertical"><var>D</var>:</div>                
+                </div>
+                <div class="matrix-content">
+                    <div class="content-row">
+                        <div class="matrix-object"><var>B</var></div>
+                        <div class="matrix-object"></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>A</var>,</div>
+                        <div class="matrix-object"><var>C</var></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>B</var>,</div>
+                        <div class="matrix-object"><var>D</var></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>C</var></div>
+                        <div class="matrix-object"></div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-xs-3"></div>
+        <%= radio_button_tag 'guKxNhUFtcHtA6HIpzoukg==', 'Yes', false, id: 'answer-field-1'%>
+        <%= radio_button_tag 'guKxNhUFtcHtA6HIpzoukg==', 'No', false, id: 'answer-field-2'%>
+        <%= radio_button_tag 'guKxNhUFtcHtA6HIpzoukg==', 'Timeout', false, id: 'answer-field-3'%>
+    </div>
+    <div id='answer-3'>
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3"><%=image_tag Image.find(67).image.url, style: "width: 100%" %></div>
+    <div class="matrix col-xs-3 adjacency">
+                <div class="header-vertical">
+                    <div class="matrix-vertical"><var>A</var>:</div>
+                    <div class="matrix-vertical"><var>B</var>:</div>
+                    <div class="matrix-vertical"><var>C</var>:</div>
+                    <div class="matrix-vertical"><var>D</var>:</div>                
+                </div>
+                <div class="matrix-content">
+                    <div class="content-row">
+                        <div class="matrix-object"><var>B</var></div>
+                        <div class="matrix-object"><var>C</var></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>A</var>,</div>
+                        <div class="matrix-object"><var>D</var></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>A</var></div>
+                    </div>
+                    <div class="content-row">
+                        <div class="matrix-object"><var>B</var></div>
+                        <div class="matrix-object"><var>A</var></div>
+                    </div>
+                </div>
+            </div>    
+        <%= radio_button_tag 'OQmU3P8dMWTfRsbhBVVnNQ==', 'Yes', false, id: 'answer-field-1'%>
+        <%= radio_button_tag 'OQmU3P8dMWTfRsbhBVVnNQ==', 'No', false, id: 'answer-field-2'%>
+        <%= radio_button_tag 'OQmU3P8dMWTfRsbhBVVnNQ==', 'Timeout', false, id: 'answer-field-3'%>
+    </div>
+    <div class="row empty"></div>
+    <div id="button-field" class="row">
+        <div class="col-xs-3"></div>
+        <%= button_tag "Same", class: "col-xs-3 btn btn-success", type: "button"%>    
+        <%= button_tag "Different", class: "col-xs-3 btn btn-danger", type: "button"%>
+        <div class="col-xs-3"></div>
+    </div>
+

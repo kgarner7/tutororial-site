@@ -1,0 +1,60 @@
+<div id="wrapper2">
+	<div class="container step-field">
+		<% path = ""%>
+		<% if @target == "main page"%>
+			<% @lesson.steps.all.each do |step| %>
+				<%= render step%>
+				<% break if current_student.user_progresses.find_by(step: step).score < step.score / 2 && !@admin%>
+			<% end%>
+			<% path = root_url%>
+		<% else%>
+			<%= form_for(@user_progress, class: "main-form", remote: true) do |f|%>
+				<div class="row empty"></div>
+				<%= render "lesson/#{@lesson.id}/step_#{@target}"%>
+				</div>
+				<div>
+					<% unless @target == "main page"%>
+					    <div class="bottom-buttons">
+						<%= link_to "Previous step", @previous_path, class: "btn btn-default bottom-previous", method: "get"%>
+						<%= button_tag("", class: "btn btn-default bottom-back buttons-bottom", type: "button") {|| content_tag :span, "", class: "glyphicon glyphicon-backward"}%>
+						<%= button_tag("", type: "button", class: "btn btn-default bottom-forward") {|| content_tag :span, "", class: "glyphicon glyphicon-forward"}%>
+						<%= submit_tag("Submit", class: "btn btn-default bottom-middle", id: "submit-step-button") %>
+						<%= link_to("Next Step", @next_path, class: "btn btn-default bottom-next", method: "get") %>
+						</div>
+					<% end%>
+					<% path = lesson_path(@lesson, target: "main page")%>
+				</div>
+				<script>
+					$(".bottom-back").hide()
+					if (<%=@user_progress.score < @user_progress.step.score / 2.0%>){
+						$(".bottom-next").hide() 
+					}
+				</script>
+			<% end%>
+		<% end%>
+		<div class="buttons-bottom">
+		<%= link_to "Edit steps", edit_lesson_path(id: @lesson.id, target: @target), class: "btn btn-primary bottom-middle", method: "get" if @admin%>
+		<%= link_to "Back", path, class: "btn btn-primary col-xs-6 bottom", method: "get"%>
+		</div>
+	</div>
+</div>
+
+<% if @method == "reload"%>
+	<% if @test == "1"%>
+	  	<script>
+	  		console.log("hello")
+		  	document.addEventListener("DOMContentLoaded", function(event){
+				if(document.passed == "OK"){
+					window.location.href = "/lessons/<%=@lesson.id%>?target=<%=@target%>&test=2&method=reload"
+				}
+			});
+		</script>
+	<% elsif @test == "2"%>
+		<script>
+			$(document).ajaxSuccess(function(){
+				window.location.href = "/lessons/<%=@lesson.id%>/edit?target=<%=@target%>"
+				})
+			$(".edit_user_progress").submit()
+		</script>
+	<% end%>
+<% end%>

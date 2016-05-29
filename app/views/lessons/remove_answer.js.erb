@@ -1,0 +1,9 @@
+<% if @destroyed.nil? %>
+	$(".errors-content").html("You must have at least one answer")
+	$(".errors-field").show()
+<% else%>
+	$("#<%=@unique_hash%>").remov()
+<% end%>
+$("#step-action-modal").on("hide", function(){
+	$(".errors-content").html("")
+})

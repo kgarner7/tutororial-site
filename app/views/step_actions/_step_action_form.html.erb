@@ -1,0 +1,30 @@
+<%= form_tag(update_actions_path(id: @user_progress.step), class: "step-action-form") do%>
+	<div>
+		<div class="col-xs-6">
+			<%= label_tag :index, "Index:", class: "col-xs-4"%>
+			<%= number_field :step_action, :index, class: "col-xs-8 index-field"%>
+		</div>
+		<div class="col-xs-6">
+			<%= label_tag :score, "Score", class: "col-xs-4"%>
+			<%= number_field :step_action, :score, min: 0, class: "col-xs-8 score-field", required: true%>
+		</div>	
+		<div class="col-xs-12">
+			<%= label :type, "Type:", class: "col-xs-2"%>
+			<%= select :step_action, :action_type, 
+			options_for_select({"Multiple select" => "multiple-check", "Multiple choice" => "multiple-radio", "Text input" => "text", "Number input" => "number", "Other" =>"content"}), {}, class: "col-xs-10 type-field"%>
+		</div>
+		<div class="col-xs-12 main-answer-fields">
+			<div class="row empty"></div>
+			<div class="row errors-field text-center">
+				<div class="errors-content"></div>
+			</div>
+			<div class="row empty"></div>
+			<h3 class="text-center" id="answer-field-header">Answer fields</h3>	
+			<div class="answer-fields"></div>
+			<div class="col-xs-3"></div>
+				<%= button_tag "Add answer", id: "add-answer-button", class: "btn btn-default col-xs-6", type: "button"%>
+			<div class="col-xs-3"></div>
+		</div>
+		<%= submit_tag "Save changes", class: "btn btn-primary col-xs-12"%>
+	</div>
+<% end %>

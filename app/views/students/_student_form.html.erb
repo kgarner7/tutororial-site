@@ -1,0 +1,17 @@
+<%= form_for(@student, target: "new student") do |f|%>
+	<p>
+		<span><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+		<%= f.text_field :username, placeholder: "Username", required: true, id: "student_username"%>
+	</p> <!-- JS because of IE support; better: placeholder="Username" -->
+    <p>
+    	<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+    	<%= f.password_field :password, placeholder: "Password", required: true%>
+    </p>
+    <p>
+    	<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+    	<%= f.password_field :password_confirmation, placeholder: "Password", required: true%>
+    </p>
+    <%= hidden_field_tag :target,  :create %>
+    <%= f.submit "Create account"%>
+    <%= render 'layouts/error_messages', object: "student"%>
+<%end%>

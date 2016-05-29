@@ -1,0 +1,18 @@
+$("#step-action-modal").modal('show')
+$(".index-field").val(<%= @step_action.index%>)
+$(".score-field").val(<%= @step_action.score%>)
+$(".type-field").val("<%= @step_action.action_type%>")
+<% @step_action.answers.each do |answer|%>
+	$(".answer-fields").append("<%= escape_javascript render answer%>")
+<% end%>
+
+$("#step-action-modal").on('hide.bs.modal', function(){
+	$(".answer-fields").empty()
+})
+$(".step-action-form").attr("action", "<%= update_actions_path(id: @step_action)%>")
+$(".errors-field").hide()
+document.index = $("[type='number']").last().val()
+$("#add-answer-button").on("click", function(event) {
+	$(".answer-fields").append("<%= escape_javascript render "answers/new_answer_form", answer_index: 0, first: false %>")
+ 	doStuff()
+})

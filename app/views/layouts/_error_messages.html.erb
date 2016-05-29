@@ -1,0 +1,11 @@
+<% if any_errors?(object) %>
+  <div id="error_explanation">
+    <ul>
+    <% errors(object).each do |target, msg| %>
+      	<% msg.each do |message| %>
+      		<script>displayError($("#<%=object%>" + "_" + "<%=target%>"), " <%=target.capitalize.gsub('_', ' ') + " " + message%>".replace("&#39;", "'"), "bottom")</script>
+      	<% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

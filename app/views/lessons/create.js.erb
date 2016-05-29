@@ -1,0 +1,5 @@
+<% if @type == "ajax"%>
+	window.location.href = "/lessons/<%=@step.lesson.id%>/edit?target=<%=@step.id%>"
+<% else%>
+	location.reload()
+<% end%>

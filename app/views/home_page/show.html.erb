@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+</head>
+<body>
+<div id="wrapper2">
+	<div id="welcome" class="container">
+		<% unless logged_in? %>
+			<div class="title">
+				<h2>Welcome to our website</h2>
+			</div>
+			<p>Whether you're new to graph theory or just want a quick review, this website is for you</p>
+		<% else%>
+			<div class="row">
+				<% unless session[:admin]%>
+					<% Lesson.all.each do |lesson| %>
+						<h2><%= render lesson%></h2>
+					<% end%>
+				<% else %>
+					<%= render "lessons/lesson_modal"%>
+					<% Lesson.all.each do |lesson| %>
+						<%= content_tag :h2, lesson.name, data: {name: lesson.name, message: "Edit lesson", path: change_lesson_path(lesson), remove_path: destroy_lesson_path(lesson), show_path: lesson_path(lesson, target: "main page"), toggle: "modal", target: "#lesson-modal"}%>
+					<% end%>
+					<div class="row empty" style="height: 10px;"></div>
+					<%= button_tag "New lesson", type: "button", class: "col-xs-12 btn btn-primary", data: {name: "", message: "New Lesson", path: new_lesson_path, remove_path: "", toggle: "modal", target: "#lesson-modal"}%>
+				<% end%>
+			</div>
+		<% end%>
+	</div>
+</div>
+</body>
+</html>

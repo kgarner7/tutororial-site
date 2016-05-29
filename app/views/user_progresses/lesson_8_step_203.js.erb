@@ -1,0 +1,8 @@
+if(<%= @count == @max_score %>){
+    window.location = $(".bottom-next").attr("href")
+}
+else{
+  $("#error").html("You only got <%=pluralize(@count, "question")%> correct. Press begin to try again.")
+  $("#begin-button").show()
+  $("#submit-step-button").hide()
+}

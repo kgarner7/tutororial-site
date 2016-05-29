@@ -1,0 +1,19 @@
+<h1><%= link_to lesson.name, lesson_path(lesson, target: "main page"), method: "get"%></h1>
+<% count = {"progress-bar-success" => 0, "progress-bar-warning" => 0, "progress-bar-danger" => 0}%>
+<% current_student.user_progresses.where(lesson: lesson).each do |progress|%>
+	<% if progress.score >= (progress.step.score * 0.9)%>
+		<% count["progress-bar-success"] += 1 %>
+	<% elsif progress.score >= progress.step.score / 2.0%>
+		<% count["progress-bar-warning"] += 1 %>
+	<% else%>
+		<% count["progress-bar-danger"] += 1 %>
+	<% end%>
+	
+<% end %>
+<div class="progress">
+	<% count.each do |key, val| %>
+		<div class="progress-bar <%=key %>" role="progressbar" style="width: <%=val * 100.0 / lesson.steps.count%>%;">
+			<span class="h3"><%= val %> / <%= lesson.steps.count %></span>
+		</div>
+	<% end %>
+</div>

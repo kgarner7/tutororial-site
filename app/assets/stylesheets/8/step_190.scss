@@ -1,0 +1,76 @@
+#step-190 {
+  .image, #answer-1, #answer-2, #answer-3, #answer-4, #answer-5, #answer-6 { 
+    position: absolute;
+  }
+  
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.25em;
+  }
+  
+  #image-1 {
+    width: 175px; 
+    height: 175px;
+  }
+  
+  #answer-1 {
+    left: 300px;
+    top: 80px;
+  }
+  
+  #answer-2 {
+    top: 140px;
+    left: 400px;
+  }
+  
+  #answer-3 {
+    top: 375px;
+    left: 325px;
+  }
+  
+  #answer-4 {
+    top: 500px;
+    right: 325px;
+  }
+  
+  #answer-5 {
+    top: 180px;
+  }
+  
+  #answer-6 {
+    top: 650px;
+    left: 250px;
+    opacity: 0;
+  }
+  
+  #question {
+    top: 600px;
+    opacity: 0;
+  }
+  #image-2 {
+    right: 70px;
+    top: 50px;
+    width: 164px; 
+    height: 200px
+  }
+  
+  #image-3 {
+    top: 300px;
+    left: 20px;
+    width: 200px; 
+    height: 140px;
+  }
+  
+  #image-4 {
+    top: 450px;
+    right: 10px;
+    width: 200px; 
+    height: 150px;
+  }
+  
+  #bob {
+    left: 185px;
+    width: 94px; 
+    height: 150px;
+  }
+}

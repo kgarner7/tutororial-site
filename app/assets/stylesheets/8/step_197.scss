@@ -1,0 +1,28 @@
+#step-197 {
+  .image, .content {
+    position: relative;
+    float: left;
+  }
+  
+  .image {
+    width: 30%;
+    height: 30%;
+  }
+  .header {
+    margin-top: 10px;
+    font-size: 1.25em;
+  }
+  
+  .content {
+    font-size: 1.125em;
+    width: 30%;
+  }
+  
+  #complete-content {
+    margin: 0 5% 0 5%;
+  }
+  
+  #graph {
+    margin: 0 5% 0 5%;
+  }
+}

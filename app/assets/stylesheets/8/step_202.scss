@@ -1,0 +1,15 @@
+#step-202 {
+  li {
+    @extend .content;
+    margin-bottom: 5px;
+  }
+  
+  .matrix-object {
+    margin-top: 2px;
+    margin-bottom: 1.2px;
+  }
+  
+  .image {
+    width: 100%;
+  }
+}

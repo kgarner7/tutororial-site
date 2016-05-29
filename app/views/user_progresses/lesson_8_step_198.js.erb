@@ -1,0 +1,8 @@
+if(<%= @count == @max_score %>){
+    window.location = $(".bottom-next").attr("href")
+}
+else{
+    $(":disabled").attr("disabled", false)
+    $(".questions-field").change()
+    $("#answer").hide()
+}

@@ -1,0 +1,38 @@
+<div id='step-190'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class='col-xs-12'>    
+        <%= image_tag Image.find(24).image.url, class: "image", id: "image-1" %>    
+        <%= image_tag Image.find(25).image.url, class: "image", id: "image-2" %>    
+        <%= image_tag Image.find(27).image.url, class: "image", id: "image-3" %>    
+        <%= image_tag Image.find(28).image.url, class: "image", id: "image-4" %>   
+        <%= image_tag Image.find(29).image.url, class: "image", id: "bob" %>
+        <%= image_tag Image.find(30).image.url, class: "image", id: "question" %>
+    </div>
+    <div class="col-xs-12">    
+        <div id='answer-1'>       
+            <p>1. Bob begins his day at home.</p>
+         <%= hidden_field_tag 'EZX+ynodOOc0+nGe1kYoog==', 'WC3Y6JuZG7JvkZ26FnIfMg==', id: 'answer-field-1'%>
+         </div>
+        <div id='answer-2'>
+            <p>2. After waking up, Bob goes to school.</p>
+       		 <%= hidden_field_tag '3iFV92XEIPZupVNj0F9X5g==', '0U91KYGuz7pEdisL6VJveQ==', id: 'answer-field-1'%>
+       </div>
+        <div id='answer-3'>
+            <p>3. After school lets out, Bob decides to go to the park</p>
+       		 <%= hidden_field_tag 'JzgIoq9nGAH6CBHALIt5ww==', '84j/JlalstOxLhxczEF0Wg==', id: 'answer-field-1'%>
+        </div>
+        <div id='answer-4'>
+            <p>4. After playing in the park, Bob becomes thirsty and decides to go to the shop</p>
+         <%= hidden_field_tag 'TkWgzM9zTjg+w1JTvGOjnQ==', 'UujVkXw/mc0T0SoN4VA3VQ==', id: 'answer-field-1'%>
+        </div>
+        <div id='answer-5'>
+            <p>5. At the conclusion of his day, Bob returns home.</p>
+        	<%= hidden_field_tag 'z90/uN8Ixldu2lhu86g7YA==', 'FK8ywUw3txl4siugplJqxg==', id: 'answer-field-1'%>
+        </div>
+        <div id='answer-6'>
+            <p id="final-text">While it may be great to know Bob's daily routine, what does it have to do with graph theory?</p>
+         <%= hidden_field_tag 'ZHEBFLqsxesNQ89nOys36A==', 'yQ54M7VAME4o9pRzDtHDiw==', id: 'answer-field-1'%>
+        </div>
+    </div>
+

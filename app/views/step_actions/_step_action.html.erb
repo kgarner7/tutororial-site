@@ -1,0 +1,6 @@
+<li>
+	<h4 class="col-xs-2"><%=link_to step_action.index, request_step_action_path(id: step_action), remote: true, method: "post"%></h4>
+	<h4 class="col-xs-5">Type: <%= step_action.action_type%></h4>
+	<h4 class="col-xs-5">Score: <%= step_action.score%></h4>
+	<%= link_to "Remove", remove_action_path(id: step_action.id), class: "row", method: "post", data: {confirm: "Are you sure you want to remove this action?"}%>
+</li>

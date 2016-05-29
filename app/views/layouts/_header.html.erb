@@ -1,0 +1,24 @@
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo" class="column1">
+			<h1><a>Graphs</a></h1>
+			<% unless logged_in?%>
+			<span>For all your graph theory needs</span>
+			<% end%>
+		</div>
+		<div id="menu" class="column4">
+			<ul>
+				<% unless logged_in? %>
+					<li class="current_page_item col-xs-6"><%= link_to "login", login_path(target: "login"), method: "get" %></li>
+					<li class="current_page_item col-xs-6"><%= link_to "sign up", login_path(target: "signup"), method: "get" %></li>
+				<% else %>
+					<li class="col-xs-4"><a>Welcome <%= current_student.username%>!</a></li>
+					<% if current_student.admin%>
+						<li class="current_page_item col-xs-4"><%= link_to session[:admin] ? "Standard view": "Admin view", change_view_path, method: "post"%></li>
+					<% end%>
+					<li class="current_page_item col-xs-4"><%= link_to "log out", logout_path, method: "post"%></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

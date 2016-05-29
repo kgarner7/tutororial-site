@@ -1,0 +1,23 @@
+<div class="modal" id="lesson-modal" tabindex="-1" role="dialog" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3>Edit lesson</h3>
+			</div>
+			<%= form_tag(new_lesson_path, id: "lesson-form") do%>
+				<div class="modal-body">
+					<%= label_tag "Name", nil, class: "col-xs-2" %>
+					<%= text_field_tag :name, nil, class: "col-xs-10" %>
+					<div class="row empty"></div>
+				</div>
+				<div class="modal-footer">
+					<%= submit_tag "Create lesson", class: "btn btn-primary col-xs-12"%>	
+					<%= link_to "Remove", "", class: "btn btn-default col-xs-3 remove-button", method: "post"%>
+					<%= link_to "View lesson", nil, class: "col-xs-5 btn btn-default view-button", method: "get" %>
+					<%= button_tag "Close", type: "button", data: {dismiss: "modal"}, class: "btn btn-default col-xs-3"%>				
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

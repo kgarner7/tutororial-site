@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  step_id: 
+  student_id: 
+  score: 1
+  lesson_id: 
+
+two:
+  step_id: 
+  student_id: 
+  score: 1
+  lesson_id: 

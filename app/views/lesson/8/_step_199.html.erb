@@ -1,0 +1,71 @@
+<div id='step-199'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="row empty"></div>
+    <div class="col-xs-12 header">Sometimes, we want to compare two graphs to see if they are similar.
+    However, for two graphs to be equal, they have to have the same vertices and edges, with the same names! 
+    Such a comparison is not very helpful when we want to compare the structure of two graphs. Luckily, there is another way.
+    </div>
+    <div class="row empty"></div>
+    <div id='answer-1'>
+        <%= hidden_field_tag 'IN1g18tcn5TGGpR0Oycqyw==', 'Xu17K3hqNog6FCpRp8FPow==', id: 'answer-field-1'%>
+        <div class="col-xs-4">
+            <h3 class="text-center"><em>Graph 1</em></h3>
+            <%= image_tag Image.find(44).image.url, class: "image" %>
+            <div class="answer-2 answer">1</div>
+            <div class="answer-3 answer">2</div>
+            <div class="answer-4 answer">3</div>
+        </div>
+        <div class="col-xs-4 text-center content">
+    <div>
+    Consider <em>Graph 1</em> and <em>Graph 2</em>. 
+    They both have the same number of vertices, with the same adjacencies.
+    However, they are not equal. 
+    For the graphs to be equal, the vertices would have to be labeled 
+        <span id="answer-2-label"><var>1</var></span>
+        <span id="answer-3-label">, <var>2</var></span>
+        <span id="answer-4-label"> 
+    and <var>3</var> or any other combination where the vertices are labeled the same.
+    </span>
+    </div>
+    <div id="answer-5-label">
+    Instead, these two graphs are <em>isomorphic</em>. 
+    Two graphs <var>G<sub>1</sub></var> and <var>G<sub>2</sub></var> are isomorphic only if there exists a one-to-one relation between the vertices of the two graphs, 
+    where two vertices <var>U</var> and <var>V</var> are only adjacent in <var>G<sub>1</sub></var> if they are also adjacent in <var>G<sub>2</sub></var>.
+    </div>
+        </div>
+        <div class="col-xs-4">
+            <h3 class="text-center">Graph 2</h3>
+            <%= image_tag Image.find(45).image.url, class: "image" %>
+            <div class="answer-2 answer">1</div>
+            <div class="answer-3 answer">2</div>
+            <div class="answer-4 answer">3</div>
+        </div>
+    </div>
+    <div class="row empty"></div>
+    <div id='answer-2'>
+        <%= hidden_field_tag 'ORrSN0n6KtGLFvamwcdpZA==', 'qZNi6u7XU50sZLIWFfLzyw==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-3'>
+        <%= hidden_field_tag 'SYioFgc016/3p8PpJEuhQg==', 'SjEN1OHZq36D8PtyikLqcg==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-4'>
+        <%= hidden_field_tag 'orTYv6dFiz+yGhr5hEj+eQ==', 'M7AtR/aGqc8dtxWEcNgqXA==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-5'>
+        <%= hidden_field_tag 'VRj9z0bs9QssXs20PCGAdg==', '7zN2L+4NB4996Bj4nqfhNw==', id: 'answer-field-1'%>
+    </div>
+    <div id='answer-6'>
+        <div class="col-xs-4 text-left" id="iso-correct">
+    Two graphs do not even need to appear the same. 
+    Graphs <var>3</var> and <var>4</var> are isomorphic, yet they do not appear the same.
+    As long as two graphs have a one-to-one correspondence with vertices and edges, they are isomorphic.
+        </div>
+        <div class="col-xs-8">
+            <h3 class="col-xs-6 text-center">Graph 3</h3>
+            <h3 class="col-xs-6 text-center">Graph 4</h3>
+            <%= image_tag Image.find(46).image.url, class: "image" %>
+        </div>
+        <%= hidden_field_tag 'CAKRxm1poi2q9diDn8uM6g==', 'b6DASm7MrtgWnDdTHUydxw==', id: 'answer-field-1'%>
+    </div>
+

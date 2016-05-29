@@ -1,0 +1,22 @@
+<div class="answer-field" id="<%=answer.unique_hash%>">
+	<div class="col-xs-12 text-center">
+		<h4>Answer</h4>
+	</div>
+	<div class="answer-value-field">
+		<%= label_tag "1[answer]", "Answer:", class: "col-xs-2"%>
+		<%= text_field "answer[#{answer.index}]", :answer, value: answer.answer, class: "col-xs-10 answer-value"%>
+	</div>
+	<div class="row empty"></div>
+	<div>
+		<%= label answer.index, :index, class: "col-xs-2"%>
+		<%= number_field "answer[#{answer.index}]", :index, value: answer.index, class: "col-xs-6"%>
+		<div class="correct-field">
+			<%= check_box "answer[#{answer.index}]", :correct, checked: answer.correct, class: "col-xs-1"%>
+			<%= label "answer[#{answer.index}]", :correct, class: "col-xs-3" %>
+		</div>
+	</div>
+	<div class="row empty"></div>
+	<div class="col-xs-12">
+		<%= link_to "Remove", remove_answer_path(answer: answer.unique_hash, step_action: answer.step_action), method: "post", remote: true%>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MathSeminar</title>
+  <% begin%>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% rescue ExecJS::RuntimeError => e%>
+  	<% message = Message.where(file_name: Step.find(@target).path_to("coffee")).last%>
+  	<% stuff = e.message.split(":")%>
+  	<% error_message = "#{stuff[0]}: #{stuff[1]}:#{Integer(stuff[2]) - 7}:#{Integer(stuff[3]) - 6}:#{stuff[4]}"%>
+  	<% Log.create({read: false, error: error_message, file_name: message.file_name, previous_code: File.read(message.file_name)})%>
+  	<% File.open(message.file_name, "w+") {|file| file.puts message.previous_code}%>
+  	<script>location.reload()</script>
+  <% end %>
+  <% begin %>
+  	<%= stylesheet_link_tag "application", params[:controller], :media => "all" %>
+  <% rescue Sass::SyntaxError => e%>
+  	<% line = Integer(e.backtrace[0][e.backtrace[0].index(':') + 1..e.backtrace[0].length]) - 1%>
+  	<% message = Message.where(file_type: "scss").last%>
+  	<% Log.create({error: e.message + " at line #{line}", file_name: message.file_name, read: false, previous_code: File.read(message.file_name)})%>
+  	<% File.open(message.file_name, "w+") {|file| file.puts message.previous_code}%>
+  	<script>location.reload()</script>
+  <% end %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+    	<% flash.each do |message_type, message| %>
+  			<div class="alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
+    </div>
+<%= render 'layouts/header'%>
+<%= yield %>
+<div id="copyright" class="container">
+	<p>&copy; Kendall Garner. All rights reserved. | Design by <%=link_to "Templated", "http://templated.co", rel: "nofollow", target: "blank"%></p>
+</div>
+</body>
+</html>

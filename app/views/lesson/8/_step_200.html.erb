@@ -1,0 +1,34 @@
+<div id='step-200'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="header text-center">Welcome to isomorphism matching! 
+    The goal of this game is to find pairs of isomorphic graphs. 
+    When you click on a question mark, the card will flip over to reveal the hidden graph.
+    Once you have selected two graphs, the game will determine whether the pair of graphs is isomorphic.
+    If it is, then the graphs will remain in their visible position, otherwise they will flip back to the question mark side. 
+    Once you have found the four pairs, you have cleared the game.</div>
+    <div class="row empty"></div>
+    <div class="row empty" id="begin-field">
+        <div class="col-xs-4"></div>
+        <%= button_tag "Begin", type: "button", class: "col-xs-4 btn btn-primary", id: "begin-button"%>
+        <div class="col-xs-4"></div>
+    </div>
+    <div id="game-field">
+        <% for id in 48..55%>
+            <div class="flip-container" id="image-<%=id%>">
+                 <div class="flipper">
+    	        	<div class="front">
+    		        	<%= image_tag Image.find(58).image.url, class: "image" %>
+    		    </div>
+    		    <div class="back">
+    		        <%= image_tag Image.find(id).image.url, class: "image" %>
+    		    </div>
+    	    </div>
+            </div>
+        <% end %>
+        <div class="row empty"></div>
+    </div>
+    <div id='answer-1'>
+        <%= hidden_field_tag 'Q1L27Fhjw98NxYdJYMkVqg==', 'INIpdzITE4ZnXsA0kGdZqA==', id: 'answer-field-1'%>
+    </div>
+

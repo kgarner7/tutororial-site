@@ -1,0 +1,48 @@
+<div id='step-198'>
+    <h2 class="text-center"><%=Step.find_by(lesson: @lesson, id: @target).name%></h2>
+    <h3 id="step-error" class="text-center errors-content"></h3>
+    <div class="row empty"></div>
+    <div class="header text-center">
+    Welcome to <em>Guess a Graph!</em> 
+    In this game, a random graph of those listed below will be chosen. 
+    Your goal is to ask three questions to determine which graph is hidden behind (imaginary) door number 1. </div>
+    <div class="col-xs-3">Graph #1</div>
+    <div class="col-xs-3">Graph #2</div>
+    <div class="col-xs-3">Graph #3</div>
+    <div class="col-xs-3">Graph #4</div>
+    <%= image_tag Image.find(43).image.url, class: "image" %>
+    <%= image_tag Image.find(39).image.url, class: "image" %>
+    <%= image_tag Image.find(41).image.url, class: "image" %>
+    <%= image_tag Image.find(42).image.url, class: "image" %>
+    <div class="row empty">
+        <div class="col-xs-4"></div>
+        <%= button_tag "Begin", id: "begin-button", type: "button", class: "btn btn-default col-xs-4" %>
+        <div class="col-xs-4"></div>
+    </div>
+    <div class = "container questions-field text-center"></div>
+    <div id="questions">
+    <div class="col-xs-4">
+        <%= button_tag "Is there more than one vertex of degree two?", type: "button", class: "question question-1 btn btn-default" %>
+        <%= button_tag "Is the graph complete?", type: "button", class: "question question-1 btn btn-default" %>
+    </div>
+    <div class="col-xs-4">
+        <%= button_tag "Are vertices A and B adjacent?", type: "button", class: "question question-2 btn btn-default" %>
+        <%= button_tag "Are vertices A and C adjacent?", type: "button", class: "question question-2 btn btn-default" %>
+        <%= button_tag "Are vertices A and D adjacent?", type: "button", class: "question question-2 btn btn-default" %>
+    </div>
+    <div class="col-xs-4">
+        <%= button_tag "What is the degree of vertex B?", type: "button", class: "question question-3 btn btn-default" %>
+        <%= button_tag "What is the degree of vertex D?", type: "button", class: "question question-3 btn btn-default" %>
+    </div>
+    </div>
+    <div id="answer" class: "row">
+        <div class="row empty"></div>
+        <%= button_tag "Graph 1", value: 1, type: "button", class: "answer col-xs-3 btn btn-default" %>
+        <%= button_tag "Graph 2", value: 2, type: "button", class: "answer col-xs-3 btn btn-default" %>
+        <%= button_tag "Graph 3", value: 3, type: "button", class: "answer col-xs-3 btn btn-default" %>
+        <%= button_tag "Graph 4", value: 4, type: "button", class: "answer col-xs-3 btn btn-default" %>
+    </div>
+    <div id='answer-1'>
+        <%= hidden_field_tag 'h5xUZFcaHC7mA/JnVExFuw==', 'm9GsqeC5TDxTkNBszvOn2A==', id: 'answer-field-1'%>
+    </div>
+

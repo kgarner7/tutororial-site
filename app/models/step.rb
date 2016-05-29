@@ -75,22 +75,22 @@ class Step < ActiveRecord::Base
     action = ""
   }
   
-  # before_destroy {    
-    # lesson_path = "app/assets/stylesheets/lessons.scss"
-    # lesson_lines = File.read(lesson_path).gsub("@import '#{self.lesson.id}/step_#{self.id}';", "")
-    # File.delete lesson_path
-    # File.open(lesson_path, "w+") {|file| file.puts lesson_lines}
-#     
-    # step = Step.find_by(lesson: self.lesson, index: self.index + 1)
-    # if step
-      # step.update_attribute(:index, self.index)
-    # end
-    # ["html", "scss", "ajax", "coffee"].each do |file_type| 
-      # file_path = path_to file_type, self.id
-      # File.delete(file_path)
-      # Message.where(file_name: file_path).find_each {|message| message.destroy}
-    # end
-  # }
+  before_destroy {    
+    lesson_path = "app/assets/stylesheets/lessons.scss"
+    lesson_lines = File.read(lesson_path).gsub("@import '#{self.lesson.id}/step_#{self.id}';", "")
+    File.delete lesson_path
+    File.open(lesson_path, "w+") {|file| file.puts lesson_lines}
+    
+    step = Step.find_by(lesson: self.lesson, index: self.index + 1)
+    if step
+      step.update_attribute(:index, self.index)
+    end
+    ["html", "scss", "ajax", "coffee"].each do |file_type| 
+      file_path = path_to file_type, self.id
+      File.delete(file_path)
+      Message.where(file_name: file_path).find_each {|message| message.destroy}
+    end
+  }
   
   def path_to(type, index = self.id)
     case type

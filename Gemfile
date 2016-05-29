@@ -30,6 +30,7 @@ gem 'thin'
 gem 'crypt'
 gem 'carrierwave'
 gem 'symmetric-encryption'
+gem 'puma'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

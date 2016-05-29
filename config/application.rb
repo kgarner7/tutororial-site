@@ -9,8 +9,6 @@ Bundler.require(*Rails.groups)
 
 module MathSeminar
   class Application < Rails::Application
-    config.force_ssl = true
-    SymmetricEncryption.load! 
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

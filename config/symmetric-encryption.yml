@@ -20,31 +20,31 @@ release:
   # containing the actual symmetric encryption key
   private_rsa_key: |
     -----BEGIN RSA PRIVATE KEY-----
-    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
+    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
     -----END RSA PRIVATE KEY-----
 
 
@@ -54,7 +54,7 @@ release:
       # Filename containing Symmetric Encryption Key encrypted using the
       # RSA public key derived from the private key above
       encrypted_key:     "<%= ENV['RELEASE_KEY1'] %>"
-      iv:                "a0CC7YbTk25C4lCfolC0aA=="
+      iv:                "GGU+FCU5Gt5tJcDFT8KT7A=="
       cipher_name:       aes-256-cbc
       encoding:          :base64strict
       version:           1
@@ -66,31 +66,31 @@ production:
   # containing the actual symmetric encryption key
   private_rsa_key: |
     -----BEGIN RSA PRIVATE KEY-----
-    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
+    MIIEowIBAAKCAQEAlgx8jzRaDulJBVkF6ztyc1gDJgD5w/sV2PwUD4+wdvag2VkN
+    cypt+wSd7uuoThyR0f6WWtdP/UY4z0dswtHpV3SG1gPcLn16UOVU723Q150WD+K2
+    aNFCdMqippQW7uNF+8ZcOqZ/oFWUYDjLKBaNNOmibRe35njx8WZAFU+nyA8HJELT
+    yF6NhvmLg2icSWrtKKmgZpYrYs3xptD3pJ6g7EWnnfLPZJhF0Xy32ozZ0R29AW1t
+    2J2aFnG1i31VjACmmNYTOlHu10OsU/fAB8KQc5N0btV6krIky8H7WvsIQEWuruYf
+    q3F003Z2zH5jMkcv9JSNTYVUgvhLGqA7D58H6QIDAQABAoIBAClGjg0mrY9khP2/
+    m202ESnBkDwoEIzkyQHDdhFByZ0wAtdHM/f2OALRJlDO6qFyInrNubaLfCmD46TB
+    VR3SeIniOCUvMqZnRfpy24Zxgv2M7MC58MuspMdT5qJEInrccifsTPqlSn5kjEhb
+    1ybT7Uwc6N1xpNj1dDiflAlIvDK/47GCM/CDFybk0vEfa8+dRyt/ym4iO6W1rnL4
+    TmKWCGdO+wR7F+BSkTwqZ8nWdWb72EjYli1qEFovkSgThuj5VaG15nbVS4ZV+bzT
+    Cdm/2nFim6p6oRa7pBxj3yTfQM+/ekKtM2cRWLhpPHpecSo+/oO9pXv0RqDKJiAb
+    JT6K1LECgYEAx+mg8LxEiIO9WTSSQZV2AHhlgV0eKfYTR5MNsHmL002uQT8MzUqF
+    XDgC+VaOYthKLaVySczpRDSB/k8BLEZf6w7hQKKiv6IN95IlzUo2XU7jZDNHCHbZ
+    mMwcGs0VR2f+Rqh0t2zbJ4yd5pqx99aZnxJzAeiz2UXNYcamsGQ/fhMCgYEAwCV5
+    w+HMjGWdL43LqZzSzgFV0Muag9btYo5bJLTAg3nLHLVDGWX7Quhu8+eXGTsJwhKG
+    iw2wZCLNwiWkOFEnp1Tav6ri5W3gG0ySomnMqmgm4Azj/lR3NQlccNEsDGda+Vje
+    Q6k/dPSSLL4N6sB/JixPbARnHTgLZw1pFCjYMZMCgYAv0VZJvv61mK1l9Qk23sVG
+    /4VoGBnq941NBYO0vp4PgPk5ahdp03VqxYsQkP+l7Q5xNK3NsVHqmpSte8BQEtVG
+    qFyA1WYQaHbmzPJ11FaEoyYJBarr/2G1Br2CO6PnXJyZ0hl49nTFVQE/86i2G4LL
+    ZeJUhpDeW6/wv0+HybLWOQKBgGkRFPAjfDIZLkZehssMUckLud0eODN3Rv7pULVV
+    kR9TbdkY1MQCm84OQv1j2Z+WRNO2RZOrvJRE47YR1yZkWgaJw8Oiscc6uZyz1kqx
+    B5T2tqs04Uak8TozEDUwa6GssnY+PetJlMVjJrsIgZun/t7kw9kQ30F+79093AOG
+    AhG5AoGBAJjoCeerP7daf1tQuOWpEBtq1Tc90EynbPgwn8PCo/lkJSAYGCn/3Zgg
+    grVGNRNG+XVKBWvR1W+7m8vtfzCGBf93izUF41TTnynQrugrhpB1LzwxTn4rWZYl
+    ZVfr9hTHfMWPhwhVGsebjBAYKaJaDGVzwoPgYBTQOGOACK7ClDyd
     -----END RSA PRIVATE KEY-----
 
 
@@ -100,7 +100,7 @@ production:
       # Filename containing Symmetric Encryption Key encrypted using the
       # RSA public key derived from the private key above
       encrypted_key:     "<%= ENV['PRODUCTION_KEY1'] %>"
-      iv:                "j3Y3I34+vU55JqpzShgHUQ=="
+      iv:                "/saaREmR/fdwFU2wDdnmNg=="
       cipher_name:       aes-256-cbc
       encoding:          :base64strict
       version:           1
